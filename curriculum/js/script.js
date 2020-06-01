@@ -1,17 +1,9 @@
-'use strict'  //使用严格模式
-/**
- * 获取元素
- */
-// const divDom=document.getElementById('table-data-wrap')
-const divDom=getElem('table-data-wrap')
-/**
- * 创建DOM元素
- */
-// const tableDom=document.createElement('table')
-const tableDom=createElem('table')
-/**
- * 设置属性
- */
+'use strict';
+//获取DIV
+const divDom=window.Lixiang.$('table-data-wrap');
+// 创建元素
+const tableDom=window.Lixiang.createElem('table');
+
 const styles={
     width: '100%',
     border:0,
@@ -19,33 +11,9 @@ const styles={
     cellspacing:0,
     id:'table-data-wrap'
 }
-setAttr(tableDom,styles)
-// tableDom.setAttribute(node,styles)
-// tableDom.border='0'
-// tableDom.setAttribute('cellpadding','0')
-// tableDom.setAttribute('cellspacing','0')
-// tableDom.setAttribute('id','table-data-wrap')
-let a=getAttr(tableDom,'id')
+window.Lixiang.setAttr(tableDom,styles)
 
-
-function getElem(el){
-    return document.getElementById(el)
-}
-
-function createElem(el){
-    return document.createElement(el)
-}
-
-function setAttr(node,styles){
-    for(let key in styles){
-        node.setAttribute(key,styles[key])
-    }
-}
-
-function getAttr(node,attr){
-    return node.getAttribute(attr)
-}
-tableDom.innerHTML+=
+tableDom.innerHTML=
             `
             <thead>
             <tr>
