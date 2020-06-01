@@ -29,7 +29,7 @@ let a=getAttr(tableDom,'id')
 
 
 function getElem(el){
-    if(typeof el=='String'){
+    if(typeof el!='string'){
         throw new Error('参数ID必须是一个字符串')
     }
     let dom= document.getElementById(el)
