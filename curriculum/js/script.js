@@ -29,7 +29,14 @@ let a=getAttr(tableDom,'id')
 
 
 function getElem(el){
-    return document.getElementById(el)
+    if(typeof el=='String'){
+        throw new Error('参数ID必须是一个字符串')
+    }
+    let dom= document.getElementById(el)
+    if(!dom){
+        throw new Error('dom未找到')
+    }
+    return dom
 }
 
 function createElem(el){
