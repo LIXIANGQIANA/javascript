@@ -12,23 +12,25 @@ const styles={
     id:'table-data-wrap'
 }
 window.Lixiang.setAttr(tableDom,styles)
+let theadHtml=` <thead><tr>`
+let thead=[
+    {lable:'头像'},
+    {lable:'姓名'},
+    {lable:'性别'},
+    {lable:'年龄'},
+    {lable:'手机号'},
+    {lable:'国籍',width:'200'},
+    {lable:'头衔'},
+    {lable:'操作'}
+]
+thead.forEach((item,index,arr)=>{
+    let width=item.width ? `width=${item.width}` : ``
+    theadHtml+=`<th ${width}>${item.lable}</th>`
+})
+theadHtml+=`</tr></thead>`
 
-tableDom.innerHTML=
-            `
-            <thead>
-            <tr>
-                <th>头像</th>
-                <th>姓名</th>
-                <th>性别</th>
-                <th>年龄</th>
-                <th>手机号</th>
-                <th>国籍</th>
-                <th width="200">爱好</th>
-                <th>头衔</th>
-                <th>操作</th>
-            </tr>
-        </thead>
-            `
+tableDom.innerHTML=theadHtml
+           
 divDom.appendChild(tableDom)
 
 
